@@ -27,7 +27,7 @@ public class PrinterComm {
     }
 
     public void startPosCom() throws Exception {
-        if (Utilities.isNullOrEmpty(PrinterConfiguration.ComPort)) {
+        if (!Utilities.isNullOrEmpty(PrinterConfiguration.ComPort)) {
             this.printerComm = new SerialPrinterComm();
         } else {
             throw new Exception("Unexpected CommPort path" + PrinterConfiguration.ComPort);
